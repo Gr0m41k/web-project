@@ -5,17 +5,17 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Login & Signup Form</title>
+    <title>Login & Signup</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/regstyle.css')}}">
 </head>
 <body>
 <section class="wrapper">
     <div class="form signup">
         <header>Signup</header>
-        <form action="#">
-            <input type="text" placeholder="Full name" required/>
-            <input type="text" placeholder="Email address" required/>
-            <input type="password" placeholder="Password" required/>
+        <form action="#" method="post">
+            <input type="text" name='name_sig' id="name_sig" placeholder="Full name" required/>
+            <input type="text" name='email_sig' id="email_sig" placeholder="Email address" required/>
+            <input type="password" name='password_sig' id="password_sig" placeholder="Password" required/>
             <div class="checkbox">
                 <input type="checkbox" id="signupCheck"/>
                 <label for="signupCheck">I accept all terms & conditions</label>
@@ -26,7 +26,7 @@
 
     <div class="form login">
         <header>Login</header>
-        <form action="#">
+        <form action="#" method="get">
             <input type="text" placeholder="Email address" required/>
             <input type="password" placeholder="Password" required/>
             <a href="#">Forgot password?</a>

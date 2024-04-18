@@ -1,4 +1,4 @@
-#e8a613 /* Import Google font - Poppins */
+/* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
@@ -12,7 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e8a613;
+  background: #f0faff;
 }
 .wrapper {
   position: relative;
@@ -22,7 +22,7 @@ body {
   padding: 20px
     30px
     120px;
-  background: #e8a613;
+  background: #4070f4;
   box-shadow: 0
     5px
     10px
@@ -153,7 +153,7 @@ form
 }
 .form.login
   input[type="submit"] {
-  background: #e8a613;
+  background: #4070f4;
   color: #fff;
   border: none;
 }
