@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfa40380-85c8-40e1-9cfb-5d2a40e9fe96" name="Changes" comment="реалезовал регистрацию и вход в аккаунт" />
+    <list default="true" id="bfa40380-85c8-40e1-9cfb-5d2a40e9fe96" name="Changes" comment="проверка" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +40,14 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="web-project1" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="web-project1" />
+      </console-settings>
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nikkm\PycharmProjects\web-project1\templates" />
@@ -137,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713711968552</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="проверка">
+      <option name="closed" value="true" />
+      <created>1713746722647</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713746722648</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -145,6 +161,7 @@
     <MESSAGE value="добавил 2 папки, + приложение на flask + if,kjybpfnjh l;byl;f" />
     <MESSAGE value="добавил чтоб юзер при регистрации добавлялся в базу данных" />
     <MESSAGE value="реалезовал регистрацию и вход в аккаунт" />
-    <option name="LAST_COMMIT_MESSAGE" value="реалезовал регистрацию и вход в аккаунт" />
+    <MESSAGE value="проверка" />
+    <option name="LAST_COMMIT_MESSAGE" value="проверка" />
   </component>
 </project>
