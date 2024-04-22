@@ -15,7 +15,7 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 
 @app.route('/register', methods=['GET', 'POST'])
-def register():
+def reqister():
     form = RegisterForm()
     if form.validate_on_submit():
         if form.password.data != form.password_again.data:
@@ -32,7 +32,7 @@ def register():
             email=form.email.data,
             about=form.about.data
         )
-
+        user.set_password(form.password.data)
         db_sess.add(user)
         db_sess.commit()
         return redirect('/login')
@@ -63,11 +63,11 @@ def login():
     if form.validate_on_submit():
         db_sess = db_session.create_session()
         user = db_sess.query(User).filter(User.email == form.email.data).first()
-        if user:
+        if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             return redirect("/")
         return render_template('login.html',
-                               message="Неправильный логин",
+                               message="Неправильный логин или пароль",
                                form=form)
     return render_template('login.html', title='Авторизация', form=form)
 

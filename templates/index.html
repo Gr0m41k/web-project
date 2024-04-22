@@ -1,35 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+{% extends "base.html" %}
+{% block body %}
 
-    <title>MarvelCompany</title>
-
-    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/unicons.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/owl.theme.default.min.css')}}">
-
-    <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/tooplate-style.css')}}">
-
-    <!--
-
-    Tooplate 2115 Marvel
-
-    https://www.tooplate.com/view/2115-marvel
-
-    -->
-</head>
-<body>
 
 <!-- MENU -->
 <nav class="navbar navbar-expand-sm navbar-light">
     <div class="container">
-        <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> Marvel</a>
+        {% if current_user.is_authenticated %}
+        <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i>{{ current_user.name }}</a>
+        {% endif %}
+<!--        <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> Marvel</a>-->
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false"
@@ -51,7 +30,7 @@
                     <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="/login"  class="nav-link"><span data-hover="Enter">Enter</span></a>
+                    <a href="/login" class="nav-link"><span data-hover="Enter">Enter</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="/register" class="nav-link"><span data-hover="Reg">Reg</span></a>
@@ -229,6 +208,4 @@
 <script src="{{ url_for('static', filename='js/smoothscroll.js') }}"></script>
 <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
 
-
-</body>
-</html>
+{% endblock %}
