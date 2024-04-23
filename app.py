@@ -1,11 +1,13 @@
 from flask import Flask, render_template, redirect
-from flask_login import LoginManager, login_user, login_required, logout_user
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from flask_wtf import FlaskForm
 from wtforms.fields.simple import EmailField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
 
 from data import db_session
+from data.news import News
 from data.users import User
+from forms.news import NewsForm
 from forms.user import RegisterForm
 
 app = Flask(__name__)
@@ -41,7 +43,8 @@ def reqister():
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    form = NewsForm()
+    return render_template('index.html', form=form)
 
 
 @login_manager.user_loader
@@ -77,6 +80,23 @@ def login():
 def logout():
     logout_user()
     return redirect("/")
+
+
+@app.route('/', methods=['GET', 'POST'])
+@login_required
+def add_news():
+    form = NewsForm()
+    try:
+        db_sess = db_session.create_session()
+        news = News()
+        news.content = form.content.data  # Присваиваем значение из формы полю content объекта News
+        news.user_id = current_user.id  # Присваиваем id текущего пользователя
+        db_sess.add(news)
+        db_sess.commit()
+        return redirect('/')
+    except:
+        return '<h1>404</h1>'
+
 
 
 def main():

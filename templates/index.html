@@ -7,8 +7,10 @@
     <div class="container">
         {% if current_user.is_authenticated %}
         <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i>{{ current_user.name }}</a>
+        {% else %}
+        <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> Marvel</a>
         {% endif %}
-<!--        <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> Marvel</a>-->
+        <!--        <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> Marvel</a>-->
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false"
@@ -165,15 +167,24 @@
                 <div class="contact-form">
                     <h2 class="mb-4">Перед тем как связаться со мной, убедитесь, что вошли в аккаунт</h2>
 
-                    <form action="" method="get">
+                    <form action="" method="post">
                         <div class="row">
                             <div class="col-12">
-                                <textarea name="message" rows="6" class="form-control" id="message"
-                                          placeholder="Message"></textarea>
+                                <div class="form-group">
+    <label for="content">{{ form.content.label }}</label>
+    {{ form.content(class="form-control", id="content", placeholder="Message") }}
+    {% for error in form.content.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+    {% endfor %}
+</div>
                             </div>
 
                             <div class="ml-lg-auto col-lg-5 col-12">
+                                {% if current_user.is_authenticated %}
                                 <input type="submit" class="form-control submit-btn" value="Send Button">
+                                {% endif %}
                             </div>
                         </div>
                     </form>
