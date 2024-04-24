@@ -98,7 +98,6 @@ def add_news():
         return '<h1>404</h1>'
 
 
-
 def main():
     db_session.global_init("db/blogs.db")
     app.run()
